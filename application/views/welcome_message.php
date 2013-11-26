@@ -46,10 +46,10 @@
          
 <div class="row">
   <div class="col-xs-6">
-    <a href="#fakelink" class="btn btn-block btn-lg btn-danger">Google</a>
+    <a href="index.php/auth/session/google" class="btn btn-block btn-lg btn-danger">Google</a>
   </div>
   <div class="col-xs-6">
-    <a href="#fakelink" class="btn btn-block btn-lg btn-inverse">Facebook</a>
+    <a href="index.php/auth/session/facebook" class="btn btn-block btn-lg btn-inverse">Facebook</a>
   </div>
 </div>
       </div>

@@ -113,7 +113,7 @@ abstract class OAuth2_Provider
 	*/	
 	public function authorize($options = array())
 	{
-		echo "eh";
+		
 		$state = md5(uniqid(rand(), TRUE));
 		get_instance()->session->set_userdata('state', $state);
 
@@ -125,7 +125,7 @@ abstract class OAuth2_Provider
 			'response_type' 	=> 'code',
 			'approval_prompt'   => 'force' // - google force-recheck
 		);
-		
+		//echo $this->url_authorize().'?'.http_build_query($params);
 		return $this->url_authorize().'?'.http_build_query($params);
 	}
 

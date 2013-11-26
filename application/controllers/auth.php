@@ -7,10 +7,20 @@ class Auth extends CI_Controller
         $this->load->library('session');
         $this->load->spark('oauth2/0.3.1');
 
-        $provider = $this->oauth2->provider($provider, array(
-            'id' => '134385200041246',
-            'secret' => 'c8fc1600e03794b353db3cdff42f870a',
-        ));
+        $site = $provider;
+        if($site=="facebook"){
+            $provider = $this->oauth2->provider($provider, array(
+                'id' => '422953697831758',
+                'secret' => 'c429dc4f7eb8d5b188e86d6dd16e172e',
+
+            ));
+        }else{
+            $provider = $this->oauth2->provider($provider, array(
+                'id' => '776685009882-v1kcqutjjt9k7h1e2qobjugqrgn9srel.apps.googleusercontent.com',
+                'secret' => 'sDK-e4GvFjp58ZTx23c4FQjz',
+
+            ));
+        }
        // $token = $provider->access($_GET['code']);
         //echo "wtf";
         //var_dump($provider);
@@ -18,8 +28,11 @@ class Auth extends CI_Controller
         if ( ! $this->input->get('code'))
         {
             // By sending no options it'll come back here
-            echo"blim";
-            $provider->authorize();
+            
+            $url = $provider->authorize();
+            echo $url;
+            redirect($url);
+            //header('Location: '.$url);
         }
         else
         {
