@@ -164,8 +164,13 @@ abstract class OAuth2_Provider
 
 				// Need to switch to Request library, but need to test it on one that works
 				$url .= '?'.http_build_query($params);
-				$response = file_get_contents($url);
-
+				//$response = file_get_contents($url);
+				$curl_handle=curl_init();
+				curl_setopt($curl_handle, CURLOPT_URL,$url);
+				curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
+				curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+				$response = curl_exec($curl_handle);
+				curl_close($curl_handle);
 				parse_str($response, $return);
 
 			break;
