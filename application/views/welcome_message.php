@@ -27,9 +27,38 @@
           <div class="logo"></div>
           BookShelf
           <small>An initiative from theBetaTurtle</small>
-        </h1>
-      </div>
+          
+      
+        </h1><br/>
+        <br/>
+        <button data-toggle="modal" data-target="#signin" class="btn btn-block btn-lg btn-inverse" style="
+    width: 20%;
+    margin: 0 auto;
+">Sign in</button>
+<div class="modal fade" id="signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
 
+        <h4 class="modal-title" id="myModalLabel">Sign in with...</h4>
+      </div>
+      <div class="modal-body">
+         
+<div class="row">
+  <div class="col-xs-6">
+    <a href="#fakelink" class="btn btn-block btn-lg btn-danger">Google</a>
+  </div>
+  <div class="col-xs-6">
+    <a href="#fakelink" class="btn btn-block btn-lg btn-inverse">Facebook</a>
+  </div>
+</div>
+      </div>
+      
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div>
+      </div>
+      
     </div>
 
 <footer>
