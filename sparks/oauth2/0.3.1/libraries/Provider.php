@@ -170,9 +170,10 @@ abstract class OAuth2_Provider
 				curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
 				curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
 				$response = curl_exec($curl_handle);
+				curl_close($curl_handle);
 				echo $response;
 				exit();
-				curl_close($curl_handle);
+				
 				parse_str($response, $return);
 
 			break;
