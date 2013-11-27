@@ -165,13 +165,18 @@ abstract class OAuth2_Provider
 				// Need to switch to Request library, but need to test it on one that works
 				$url .= '?'.http_build_query($params);
 				//$response = file_get_contents($url);
-				$curl_handle=curl_init();
-				curl_setopt($curl_handle, CURLOPT_URL,$url);
-				curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
-				curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
-				$response = curl_exec($curl_handle);
-				curl_close($curl_handle);
-				echo $response;
+				$ch = curl_init();
+			    $timeout = 15;
+			    curl_setopt($ch, CURLOPT_URL, $url);
+			    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+
+			    // Edit: Follow redirects
+			    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); 
+
+			    $data = curl_exec($ch);
+				var_dump(curl_getinfo($ch));
+    			curl_close($ch);
 				exit();
 				
 				parse_str($response, $return);
