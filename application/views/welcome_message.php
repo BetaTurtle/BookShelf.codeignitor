@@ -1,23 +1,18 @@
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>BookShelf from BetaTurtle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Loading Bootstrap -->
-    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-
+    <link href="<?=base_url('assets/bootstrap/css/bootstrap.css')?>" rel="stylesheet">
     <!-- Loading Flat UI -->
-    <link href="assets/css/flat-ui.css" rel="stylesheet">
-    <link href="assets/css/demo.css" rel="stylesheet">
+    <link href="<?=base_url('assets/css/flat-ui.css')?>" rel="stylesheet">
+    <link href="<?=base_url('assets/css/demo.css')?>" rel="stylesheet">
 
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="assets/images /favicon.ico">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.js"></script>
+      <script src="<?=base_url('assets/js/html5shiv.js')?>"></script>
     <![endif]-->
   </head>
   <body>
@@ -46,10 +41,10 @@
          
 <div class="row">
   <div class="col-xs-6">
-    <a href="index.php/auth/session/google" class="btn btn-block btn-lg btn-danger">Google</a>
+    <a href="<?=base_url('index.php/auth/session/google')?>" class="btn btn-block btn-lg btn-danger">Google</a>
   </div>
   <div class="col-xs-6">
-    <a href="index.php/auth/session/facebook" class="btn btn-block btn-lg btn-inverse">Facebook</a>
+    <a href="<?=base_url('index.php/auth/session/facebook')?>" class="btn btn-block btn-lg btn-inverse">Facebook</a>
   </div>
 </div>
       </div>
@@ -89,18 +84,18 @@
     </footer>
     
     <!-- Load JS here for greater good =============================-->
-    <script src="assets/js/jquery-1.8.3.min.js"></script>
-    <script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
-    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/bootstrap-select.js"></script>
-    <script src="assets/js/bootstrap-switch.js"></script>
-    <script src="assets/js/flatui-checkbox.js"></script>
-    <script src="assets/js/flatui-radio.js"></script>
-    <script src="assets/js/jquery.tagsinput.js"></script>
-    <script src="assets/js/jquery.placeholder.js"></script>
-    <script src="assets/js/jquery.stacktable.js"></script>
+    <script src="<?=base_url('assets/js/jquery-1.8.3.min.js')?>"></script>
+    <script src="<?=base_url('assets/js/jquery-ui-1.10.3.custom.min.js')?>"></script>
+    <script src="<?=base_url('assets/js/jquery.ui.touch-punch.min.js')?>"></script>
+    <script src="<?=base_url('assets/js/bootstrap.min.js')?>"></script>
+    <script src="<?=base_url('assets/js/bootstrap-select.js')?>"></script>
+    <script src="<?=base_url('assets/js/bootstrap-switch.js')?>"></script>
+    <script src="<?=base_url('assets/js/flatui-checkbox.js')?>"></script>
+    <script src="<?=base_url('assets/js/flatui-radio.js')?>"></script>
+    <script src="<?=base_url('assets/js/jquery.tagsinput.js')?>"></script>
+    <script src="<?=base_url('assets/js/jquery.placeholder.js')?>"></script>
+    <script src="<?=base_url('assets/js/jquery.stacktable.js')?>"></script>
     <script src="http://vjs.zencdn.net/4.1/video.js"></script>
-    <script src="assets/js/application.js"></script>
+    <script src="<?=base_url('assets/js/application.js')?>"></script>
   </body>
 </html>

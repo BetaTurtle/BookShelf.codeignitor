@@ -174,10 +174,10 @@ abstract class OAuth2_Provider
 			    // Edit: Follow redirects
 			    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); 
 
-			    $data = curl_exec($ch);
-				var_dump(curl_getinfo($ch));
+			    $response = curl_exec($ch);
+				//var_dump(curl_getinfo($ch));
     			curl_close($ch);
-				exit();
+				//exit();
 				
 				parse_str($response, $return);
 

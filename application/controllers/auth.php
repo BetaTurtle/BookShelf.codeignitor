@@ -46,10 +46,52 @@ class Auth extends CI_Controller
                 // Here you should use this information to A) look for a user B) help a new user sign up with existing data.
                 // If you store it all in a cookie and redirect to a registration page this is crazy-simple.
                 echo "<pre>Tokens: ";
-                var_dump($token);
+                //var_dump($token);
+                echo $token->access_token;
+                echo $user['email'];
+                //echo $email;
+                $this->load->database();
+                
+                $query=$this->db->get_where('access_tokens',array('email'=>$user['email'],'provider'=>$site));
+                //var_dump($query);
+                $count = $query->num_rows(); 
+                echo "Count: ".$count;
+                
+                if($count>0)  // id found stop
+                   {
+                   // echo "\nAlready exist";
+                      
+                   } else{
+                    $data = array(
+                    'token'=>$token->access_token,
+                    'email'=>$user['email'],
+                    'provider'=>$site
+                    );
+                    $this->db->insert('access_tokens',$data); 
+                   }
 
-                echo "\n\nUser Info: ";
-                var_dump($user);
+                $query=$this->db->get_where('users',array('email'=>$user['email']));
+                $count = $query->num_rows(); 
+                $data = array(
+                    'name'=>$user['name'],
+                    'email'=>$user['email']
+                    );
+                if($count>0)  // id found stop
+                   {
+                    //echo "\nAlready exist";
+                    //redirect('auth');
+                      
+                   } else{
+                    
+                   $this->db->insert('users',$data); 
+                   }
+
+                   $this->session->set_userdata($data);
+                   redirect('/');
+
+                 
+                //echo "\n\nUser Info: ";
+               // var_dump($user);
             }
 /*
             catch (OAuth2_Exception $e)
@@ -58,6 +100,6 @@ class Auth extends CI_Controller
                 show_error('That didnt work: '.$e);
             }*/
 
-        }
+        }   
     }
 }   

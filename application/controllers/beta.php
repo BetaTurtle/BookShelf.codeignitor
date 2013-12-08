@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Beta extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,7 +19,15 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		if($this->session->userdata('email'))
+			echo "Welcome ".$this->session->userdata('name')." <a href=".base_url('index.php/beta/logout').">Logout</a>";
+		else
+			//echo $this->session->userdata($data);
+			$this->load->view('welcome_message');
+	}
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect('/');
 	}
 }
 

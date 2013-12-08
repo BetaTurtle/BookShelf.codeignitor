@@ -38,7 +38,8 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "beta";
+$route['page'] = "home/index";
 $route['404_override'] = '';
 
 

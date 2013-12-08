@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Base Site URL
+| Base Site URLs
 |--------------------------------------------------------------------------
 |
 | URL to your CodeIgniter root. Typically this will be your base URL,
